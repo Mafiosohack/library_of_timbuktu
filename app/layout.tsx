@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Crimson_Pro, Cinzel } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -39,7 +40,10 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${cormorant.variable} ${crimson.variable} ${cinzel.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
