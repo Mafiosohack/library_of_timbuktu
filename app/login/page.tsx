@@ -2,6 +2,7 @@
 
 import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 
 function LoginForm() {
@@ -87,7 +88,10 @@ function LoginForm() {
         </button>
 
         <p className="text-center text-xs text-muted-foreground">
-          No account? Ask an administrator for an invite.
+          Have an invite code?{" "}
+          <Link href="/signup" className="text-accent hover:underline">
+            Create an account
+          </Link>
         </p>
       </form>
     </main>
